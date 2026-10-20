@@ -18,7 +18,9 @@ class CategoriaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nombre' => $this->faker->word(),
+            'descripcion' => $this->faker->sentence(),
+            'estado' => $this->faker->randomElement(['activo', 'inactivo']),
         ];
     }
 }

@@ -18,7 +18,12 @@ class EmpleadoFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'codigo' => $this->faker->unique()->numerify('E-####'),
+            'nombre' => $this->faker->name(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'cargo' => $this->faker->jobTitle(),
+            'fecha_contratacion' => $this->faker->date(),
+            'estado' => $this->faker->randomElement(['activo', 'inactivo']),
         ];
     }
 }
