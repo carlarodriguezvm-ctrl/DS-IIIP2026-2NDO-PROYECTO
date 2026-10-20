@@ -15,12 +15,16 @@ class CategoriaFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
-    {
-        return [
-            'nombre' => $this->faker->word(),
-            'descripcion' => $this->faker->sentence(),
-            'estado' => $this->faker->randomElement(['activo', 'inactivo']),
-        ];
-    }
+
+
+public function definition(): array
+{
+    return [
+        'nombre' => 'Cat' . $this->faker->unique()->numerify('####'),
+        'descripcion' => $this->faker->sentence(6),
+        'estado' => $this->faker->randomElement(['activo', 'inactivo']),
+    ];
 }
+
+}
+
