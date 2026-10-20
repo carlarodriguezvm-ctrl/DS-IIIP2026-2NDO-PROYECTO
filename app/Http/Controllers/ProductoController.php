@@ -12,7 +12,7 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $productos = Producto::with('categorias')->all();
+        $productos = Producto::with('categorias')->get();
         return dd($productos);
     }
 
