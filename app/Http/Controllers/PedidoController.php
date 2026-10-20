@@ -12,7 +12,8 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        //
+        $pedidos = Pedido::with('clientes', 'empleados')->all();
+        return dd($pedidos);
     }
 
     /**

@@ -12,7 +12,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Producto::with('categorias')->all();
+        return dd($productos);
     }
 
     /**
