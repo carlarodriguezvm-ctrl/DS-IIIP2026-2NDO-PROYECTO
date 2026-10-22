@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Pedido;
 use Illuminate\Http\Request;
+use App\Models\Cliente;
+use App\Models\Empleado;
 
 class PedidoController extends Controller
 {
@@ -12,7 +14,7 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedidos = Pedido::with(['clientes', 'empleados'])->get();
+        $pedidos = Pedido::with(['cliente', 'empleado'])->get();
         return dd($pedidos);
     }
 
